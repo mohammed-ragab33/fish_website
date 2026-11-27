@@ -1,0 +1,48 @@
+
+/* ---------- صفحة المنتجات ---------- */
+.ph{max-width:1320px;margin:0 auto;padding:48px 40px 20px}
+.ph-crumb{font-size:13px;color:#6f7b82}.ph-crumb a{color:#a8b0b5}
+.ph h1{font-family:'Noto Naskh Arabic',serif;font-size:56px;margin:8px 0 0;line-height:1.2}
+.ph-count{color:#c9a45c;font-size:14px}
+.ph-note{font-size:12px;color:#6f7b82;margin-inline-start:10px}
+.tools{position:sticky;top:0;z-index:20;background:rgba(11,17,22,.96);border-block:1px solid #1d2830}
+.tools-in{max-width:1320px;margin:0 auto;padding:14px 40px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+#chips{display:flex;gap:8px;flex:1;overflow-x:auto;scrollbar-width:none}#chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:42px;padding:0 18px;background:transparent;border:1px solid #26292b;color:#c8cfd3;font:inherit;font-size:14px;cursor:pointer;transition:all .3s}
+.chip:hover{border-color:#5d5640}.chip.on{background:#c9a45c;border-color:#c9a45c;color:#16110a;font-weight:600}
+.tools input,.tools select{height:42px;background:#0f171d;border:1px solid #26292b;color:#f1ece3;font:inherit;font-size:16px;padding:0 14px}
+.tools input{width:220px}.tools input:focus,.tools select:focus{outline:1px solid #c9a45c}
+#grid{max-width:1320px;margin:0 auto;padding:56px 40px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:56px 28px}
+.pc{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;animation:pcin .7s cubic-bezier(.16,1,.3,1) both;animation-delay:calc(var(--i)*60ms)}
+@keyframes pcin{from{opacity:0;transform:translateY(30px) scale(.96)}to{opacity:1;transform:none}}
+.pc-plate{position:relative;width:210px;height:210px;margin-bottom:12px}
+.pc-plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 26px 40px -18px #000;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+.pc-ring{position:absolute;inset:-10px;border-radius:50%;border:1px dashed #c9a45c;opacity:.45;animation:spin 40s linear infinite;transition:opacity .4s,inset .5s}
+.pc:hover .pc-ring{opacity:1;inset:-15px;animation-duration:8s}.pc:hover .pc-plate img{transform:rotate(-8deg) scale(1.05)}
+.pc-off{position:absolute;top:-4px;right:6px;width:54px;height:54px;border-radius:50%;background:#c9a45c;color:#16110a;display:grid;place-items:center;font-weight:700;font-size:14px}
+.pc-tag{font-size:12px;color:#c9a45c;min-height:18px}
+.pc h3{margin:0;font-family:'Noto Naskh Arabic',serif;font-size:22px;color:#f1ece3}
+.pc p{margin:0;font-size:13px;color:#8a949a}
+.pc-w{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.pc-w button{height:34px;padding:0 12px;background:transparent;border:1px solid #26292b;color:#a8b0b5;font:inherit;font-size:13px;cursor:pointer;transition:all .25s}
+.pc-w button.on{border-color:#c9a45c;color:#c9a45c}
+.pc-price{display:flex;gap:10px;align-items:baseline;margin-top:4px}
+.pc-price strong{font-size:22px;color:#c9a45c;font-weight:600;white-space:nowrap}.pc-price s{font-size:13px;color:#6f7b82;white-space:nowrap}
+.pop{animation:popn .4s cubic-bezier(.34,1.56,.64,1)}@keyframes popn{40%{transform:scale(1.15)}}
+.pc-add{margin-top:6px;height:44px;padding:0 26px;background:transparent;border:1px solid #c9a45c;color:#c9a45c;font:inherit;font-size:15px;cursor:pointer;background-image:linear-gradient(#c9a45c,#c9a45c);background-repeat:no-repeat;background-position:right;background-size:0 100%;transition:background-size .45s cubic-bezier(.16,1,.3,1),color .3s}
+.pc-add:hover,.pc-add.ok{background-size:100% 100%;color:#16110a}
+.empty{grid-column:1/-1;text-align:center;padding:60px 0;display:flex;flex-direction:column;gap:8px;color:#8a949a}.empty strong{font-family:'Noto Naskh Arabic',serif;font-size:26px;color:#f1ece3}
+@media (max-width:760px){
+  .tools{top:72px}
+  .ph{padding:28px 18px 14px}.ph h1{font-size:34px}
+  .tools-in{padding:10px 14px;gap:10px}
+  #chips{flex:1 1 100%;order:1}
+  .tools input{flex:1;width:auto;order:2}.tools select{order:3;max-width:44%}
+  #grid{padding:36px 12px 60px;grid-template-columns:1fr 1fr;gap:40px 10px}
+  .pc-plate{width:min(140px,38vw);height:min(140px,38vw)}
+  .pc-ring{inset:-7px}.pc-off{width:42px;height:42px;font-size:12px;right:-2px}
+  .pc h3{font-size:17px}.pc p{font-size:12px}
+  .pc-w button{height:32px;padding:0 8px;font-size:12px}
+  .pc-price{flex-direction:column;gap:0;align-items:center}.pc-price strong{font-size:18px}
+  .pc-add{height:42px;padding:0 16px;font-size:14px;width:100%}
+}
