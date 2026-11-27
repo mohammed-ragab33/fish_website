@@ -164,31 +164,68 @@ html,body{overflow-x:clip}
 }
 
 /* ---------- الأقسام اللي تحت أول الصفحة: لون فاتح ---------- */
-.lt{--lt-bg:#f6f1e7;--lt-card:#fffaf2;--lt-line:#e4d8c4;--lt-ink:#1b2226;--lt-mute:#5c6266;--lt-gold:#8a6a2f;background:var(--lt-bg)!important;color:var(--lt-ink)}
-section.lt{border-color:var(--lt-line)!important}
-.stats.lt,.why.lt{background:#efe7d8!important}
-.lt [style*="color:#f1ece3"]{color:var(--lt-ink)!important}
-.lt [style*="color:#a8b0b5"],.lt [style*="color:#c3cace"],.lt [style*="color:#8a949a"],.lt [style*="color:#c8cfd3"]{color:var(--lt-mute)!important}
-.lt [style*="color:#6f7b82"]{color:#6b6f72!important}
-.lt [style*="color:#c9a45c"]{color:var(--lt-gold)!important}
-.lt [style*="border:1px solid #1d2830"],.lt [style*="border:1px solid #3a3424"],.lt [style*="border-inline-start:1px solid #1d2830"]{border-color:var(--lt-line)!important}
-.lt [style*="background:#0f171d"],.lt [style*="background:#0d151a"]{background:var(--lt-card)!important}
-.lt .btn-gold[style*="color:#16110a"],.lt [style*="background:#c9a45c"][style*="color:#16110a"]{color:#16110a!important}
-.lt .btn-ghost{color:var(--lt-ink)!important;border-color:#cdbb9c!important}
-.lt .btn-ghost:hover{color:#16110a!important}
-.lt .stats .rv,.stats.lt .rv{border-color:var(--lt-line)!important}
-.lt svg[stroke="#c9a45c"]{stroke:var(--lt-gold)}
+html[data-theme=light] .lt{--lt-bg:#f6f1e7;--lt-card:#fffaf2;--lt-line:#e4d8c4;--lt-ink:#1b2226;--lt-mute:#5c6266;--lt-gold:#8a6a2f;background:var(--lt-bg)!important;color:var(--lt-ink)}
+html[data-theme=light] section.lt{border-color:var(--lt-line)!important}
+html[data-theme=light] .stats.lt,html[data-theme=light] .why.lt{background:#efe7d8!important}
+html[data-theme=light] .lt [style*="color:#f1ece3"]{color:var(--lt-ink)!important}
+html[data-theme=light] .lt [style*="color:#a8b0b5"],html[data-theme=light] .lt [style*="color:#c3cace"],html[data-theme=light] .lt [style*="color:#8a949a"],html[data-theme=light] .lt [style*="color:#c8cfd3"]{color:var(--lt-mute)!important}
+html[data-theme=light] .lt [style*="color:#6f7b82"]{color:#6b6f72!important}
+html[data-theme=light] .lt [style*="color:#c9a45c"]{color:var(--lt-gold)!important}
+html[data-theme=light] .lt [style*="border:1px solid #1d2830"],html[data-theme=light] .lt [style*="border:1px solid #3a3424"],html[data-theme=light] .lt [style*="border-inline-start:1px solid #1d2830"]{border-color:var(--lt-line)!important}
+html[data-theme=light] .lt [style*="background:#0f171d"],html[data-theme=light] .lt [style*="background:#0d151a"]{background:var(--lt-card)!important}
+html[data-theme=light] .lt .btn-gold[style*="color:#16110a"],html[data-theme=light] .lt [style*="background:#c9a45c"][style*="color:#16110a"]{color:#16110a!important}
+html[data-theme=light] .lt .btn-ghost{color:var(--lt-ink)!important;border-color:#cdbb9c!important}
+html[data-theme=light] .lt .btn-ghost:hover{color:#16110a!important}
+html[data-theme=light] .lt .stats .rv,html[data-theme=light] .stats.lt .rv{border-color:var(--lt-line)!important}
+html[data-theme=light] .lt svg[stroke="#c9a45c"]{stroke:var(--lt-gold)}
 /* الأطباق على الفاتح */
-.lt .pl img{box-shadow:0 26px 40px -20px rgba(70,45,10,.45)!important}
-.lt .pl .shadow{background:rgba(70,45,10,.28)!important}
-.lt .pl .ring{border-color:#b8975a!important}
-.lt .pl > div:first-child > span:nth-child(2){background:radial-gradient(circle,rgba(201,164,92,.28),rgba(201,164,92,0) 65%)!important}
-.lt .old::after{background:var(--lt-gold)}
-.lt .add{color:var(--lt-gold)!important;border-color:var(--lt-gold)!important}
+html[data-theme=light] .lt .pl img{box-shadow:0 26px 40px -20px rgba(70,45,10,.45)!important}
+html[data-theme=light] .lt .pl .shadow{background:rgba(70,45,10,.28)!important}
+html[data-theme=light] .lt .pl .ring{border-color:#b8975a!important}
+html[data-theme=light] .lt .pl > div:first-child > span:nth-child(2){background:radial-gradient(circle,rgba(201,164,92,.28),rgba(201,164,92,0) 65%)!important}
+html[data-theme=light] .lt .old::after{background:var(--lt-gold)}
+html[data-theme=light] .lt .add{color:var(--lt-gold)!important;border-color:var(--lt-gold)!important}
 /* الشرائح بتفضل غامقة لأنها صور */
-.lt .acc-item{border-color:var(--lt-line)}
-.lt .acc-item.on{border-color:var(--lt-gold)}
+html[data-theme=light] .lt .acc-item{border-color:var(--lt-line)}
+html[data-theme=light] .lt .acc-item.on{border-color:var(--lt-gold)}
 /* الفاصل بين الفاتح والفوتر */
-.site-footer{border-top:0!important}
+html[data-theme=light] .site-footer{border-top:0!important}
 /* الأقسام اللي عرضها محدود: الخلفية الفاتحة تكمّل لحد حرف الشاشة */
-.bs.lt,.cats.lt,.bundle.lt{box-shadow:0 0 0 100vmax var(--lt-bg);clip-path:inset(0 -100vmax)}
+html[data-theme=light] .bs.lt,html[data-theme=light] .cats.lt,html[data-theme=light] .bundle.lt{box-shadow:0 0 0 100vmax var(--lt-bg);clip-path:inset(0 -100vmax)}
+
+
+/* ---------- الوضع الفاتح: صفحة المنتجات والسلة ---------- */
+html[data-theme=light] body.inner{background:#f6f1e7!important;color:#1b2226!important}
+html[data-theme=light] body.inner .site-header{background:#0b1116;box-shadow:0 0 0 100vmax #0b1116;clip-path:inset(0 -100vmax)}
+html[data-theme=light] .ph-crumb,html[data-theme=light] .ph-crumb a,html[data-theme=light] .ph-note{color:#6b6f72}
+html[data-theme=light] .ph-count{color:#8a6a2f}
+html[data-theme=light] .tools{background:rgba(246,241,231,.97);border-color:#e4d8c4}
+html[data-theme=light] .chip{border-color:#d8c9b0;color:#3a4246}
+html[data-theme=light] .chip.on{background:#c9a45c;border-color:#c9a45c;color:#16110a}
+html[data-theme=light] .tools input,html[data-theme=light] .tools select,html[data-theme=light] .fld input,html[data-theme=light] .fld select,html[data-theme=light] .fld textarea{background:#fffaf2;border-color:#d8c9b0;color:#1b2226}
+html[data-theme=light] .pc h3,html[data-theme=light] .empty strong,html[data-theme=light] .ci-txt strong,html[data-theme=light] .box h2,html[data-theme=light] .sum .tot,html[data-theme=light] .empty-box strong,html[data-theme=light] .done h2{color:#1b2226}
+html[data-theme=light] .pc p,html[data-theme=light] .ci-txt small,html[data-theme=light] .sum div,html[data-theme=light] .note,html[data-theme=light] .hint,html[data-theme=light] .fld>span,html[data-theme=light] .empty-box p,html[data-theme=light] .done p{color:#5c6266}
+html[data-theme=light] .pc-tag,html[data-theme=light] .pc-price strong,html[data-theme=light] .ci-tot,html[data-theme=light] .sum .tot b,html[data-theme=light] #s-free,html[data-theme=light] .done-code,html[data-theme=light] .qty button{color:#8a6a2f}
+html[data-theme=light] .pc-ring{border-color:#b8975a}
+html[data-theme=light] .pc-plate img,html[data-theme=light] .ci img{box-shadow:0 22px 34px -18px rgba(70,45,10,.45)}
+html[data-theme=light] .pc-w button{border-color:#d8c9b0;color:#5c6266}
+html[data-theme=light] .pc-w button.on{border-color:#8a6a2f;color:#8a6a2f}
+html[data-theme=light] .pc-add{border-color:#8a6a2f;color:#8a6a2f}
+html[data-theme=light] .pc-add:hover,html[data-theme=light] .pc-add.ok{color:#16110a}
+html[data-theme=light] .box{background:#fffaf2;border-color:#e4d8c4}
+html[data-theme=light] #items,html[data-theme=light] .ci{border-color:#e4d8c4}
+html[data-theme=light] .qty{border-color:#d8c9b0}
+html[data-theme=light] .sum .tot{border-color:#d8c9b0}
+html[data-theme=light] .pill span{border-color:#d8c9b0;color:#3a4246}
+html[data-theme=light] .pill input:checked+span{color:#16110a}
+html[data-theme=light] .lbtn{color:#1b2226;border-color:#cdbb9c}
+html[data-theme=light] .cart-items>a{color:#8a6a2f!important}
+
+/* ---------- زرار تغيير الوضع ---------- */
+.theme-btn{width:44px;height:44px;flex:none;display:grid;place-items:center;background:transparent;border:1px solid #3a3424;color:#c9a45c;cursor:pointer;position:relative;overflow:hidden;transition:border-color .3s}
+.theme-btn:hover{border-color:#c9a45c}
+.theme-btn svg{position:absolute;transition:transform .5s cubic-bezier(.34,1.4,.64,1),opacity .3s}
+html[data-theme=light] .theme-btn .moon,html:not([data-theme=light]) .theme-btn .sun{transform:translateY(30px) rotate(90deg);opacity:0}
+.theme-anim,.theme-anim *{transition:background-color .45s ease,color .45s ease,border-color .45s ease!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+@media (max-width:760px){.theme-btn{margin-inline-start:auto}}

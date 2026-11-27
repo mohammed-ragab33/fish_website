@@ -26,6 +26,17 @@ window.mowgaAdd=function(item,imgEl){
   setTimeout(()=>{fx.remove();done()},900);
 };
 
+/* الوضع الفاتح والغامق */
+document.querySelectorAll('.theme-btn').forEach(tb=>tb.addEventListener('click',e=>{
+  const root=document.documentElement, next=root.getAttribute('data-theme')==='light'?'dark':'light';
+  try{localStorage.setItem('mw_theme',next)}catch(x){}
+  const apply=()=>root.setAttribute('data-theme',next);
+  if(document.startViewTransition&&!reduce){
+    const r=tb.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2,R=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+    document.startViewTransition(apply).ready.then(()=>root.animate({clipPath:[`circle(0 at ${x}px ${y}px)`,`circle(${R}px at ${x}px ${y}px)`]},{duration:650,easing:'cubic-bezier(.65,0,.35,1)',pseudoElement:'::view-transition-new(root)'})).catch(()=>{});
+  }else{root.classList.add('theme-anim');apply();setTimeout(()=>root.classList.remove('theme-anim'),500)}
+}));
+
 /* القايمة على الموبايل */
 const btn=document.querySelector('.menu-btn');
 if(btn){
