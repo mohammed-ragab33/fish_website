@@ -57,7 +57,7 @@ grid.addEventListener('click',e=>{
   const wb=e.target.closest('[data-w]');
   if(wb){sel[p.id]=+wb.dataset.w;card.querySelectorAll('.pc-w button').forEach(b=>b.classList.toggle('on',b===wb));
     const pr=price(p),old=p.off?pr/(1-p.off/100):0;card.querySelector('.pc-price').innerHTML=`<strong class="pop">${fmt(pr)} ج.م</strong>${old?`<s>${fmt(Math.round(old/10)*10)} ج.م</s>`:''}`;return}
-  if(e.target.closest('.pc-add')){const k=sel[p.id]||0;mowgaAdd({id:p.id,name:p.name,w:p.w[k][0],price:price(p)},card.querySelector('img'));
+  if(e.target.closest('.pc-add')){const k=sel[p.id]||0;mowgaAdd({id:p.id,name:p.name,w:p.w[k][0],price:price(p),img:'images/'+p.img+'.jpg'},card.querySelector('img'));
     const b=e.target.closest('.pc-add');b.textContent='اتضاف ✓';b.classList.add('ok');setTimeout(()=>{b.textContent='أضف للسلة';b.classList.remove('ok')},1500)}
 });
 fromHash();

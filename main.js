@@ -51,6 +51,6 @@ if(plates){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting
 const NAMES=['فيليه سالمون نرويجي','ستيك سالمون','شرايح سالمون سوشي','جمبري طازة'];
 document.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',()=>{
   const i=+btn.dataset.add, pl=btn.closest('[data-plate]');
-  mowgaAdd({id:'home-'+i,name:NAMES[i],w:'',price:+pl.querySelector('.num').dataset.target},pl.querySelector('img'));
+  mowgaAdd({id:'home-'+i,name:NAMES[i],w:'',price:+pl.querySelector('.num').dataset.target,img:pl.querySelector('img').getAttribute('src')},pl.querySelector('img'));
 }));
 })();
