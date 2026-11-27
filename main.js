@@ -11,6 +11,15 @@ if(btn){
   addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 }
 
+/* الأقسام: الشريحة بتتفتح بالماوس أو بالضغط */
+const acc=document.querySelectorAll('.acc-item');
+acc.forEach(it=>{
+  const open=()=>acc.forEach(x=>x.classList.toggle('on',x===it));
+  it.addEventListener('mouseenter',()=>{if(matchMedia('(hover:hover)').matches)open()});
+  it.addEventListener('focus',open);
+  it.addEventListener('click',e=>{if(!it.classList.contains('on')){e.preventDefault();open()}});
+});
+
 /* الأطباق والعداد لما القسم يظهر */
 const plates=document.querySelector('.plates');
 function count(){document.querySelectorAll('.num').forEach((el,i)=>{const T=+el.dataset.target,d=reduce?0:900+i*180,dur=reduce?1:1200;setTimeout(()=>{const t0=performance.now();const step=now=>{const k=Math.min(1,(now-t0)/dur);el.textContent=fmt(T*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)},d)})}
