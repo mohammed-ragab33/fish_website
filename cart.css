@@ -41,6 +41,8 @@
 .check{width:96px;height:96px;margin:0 auto;border-radius:50%;border:2px solid #c9a45c;display:grid;place-items:center;animation:popn .6s cubic-bezier(.34,1.56,.64,1)}
 .check path{stroke-dasharray:30;stroke-dashoffset:30;animation:draw .6s ease-out .3s forwards}@keyframes draw{to{stroke-dashoffset:0}}
 #msg{white-space:pre-wrap;text-align:right;background:#0d151a;border:1px solid #1d2830;padding:18px;font-size:14px;color:#c3cace;margin:20px 0;max-height:320px;overflow:auto}
+.done-code{font-size:40px;font-weight:700;color:#c9a45c;letter-spacing:2px;direction:ltr;margin:4px 0 10px}
+.send.loading{opacity:.7;cursor:wait}
 .gbtn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 28px;background:#c9a45c;color:#16110a;font-weight:600;border:0;font:inherit;cursor:pointer}
 .lbtn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 24px;border:1px solid #5d5640;color:#f1ece3;background:transparent;font:inherit;cursor:pointer}
 @media (max-width:760px){

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0b1116">
+<title>لوحة التحكم | موجة</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css?v=88728">
+</head>
+<body>
+<section id="login" class="login" hidden>
+  <form id="lf" class="lbox" novalidate>
+    <div class="logo"><span>م</span>موجة</div>
+    <p class="sub">لوحة التحكم</p>
+    <label>اسم المستخدم<input name="user" autocomplete="username" required></label>
+    <label>الباسوورد<input name="pass" type="password" autocomplete="current-password" required></label>
+    <button class="gold" type="submit">دخول</button>
+    <p class="lerr" role="alert"></p>
+  </form>
+</section>
+
+<div id="app" hidden>
+  <header class="top">
+    <div class="logo"><span>م</span>موجة <small>لوحة التحكم</small></div>
+    <div class="live"><i></i><span id="live-txt">بيتحدث تلقائي</span></div>
+    <button type="button" id="sound" class="ghost" aria-pressed="true" title="صوت الطلبات الجديدة">الصوت: شغال</button>
+    <button type="button" id="logout" class="ghost">خروج</button>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><span>طلبات النهارده</span><b id="st-today">0</b></div>
+    <div class="stat"><span>إيراد النهارده</span><b id="st-rev">0</b></div>
+    <div class="stat hot"><span>طلبات جديدة</span><b id="st-new">0</b></div>
+    <div class="stat"><span>في الطريق</span><b id="st-out">0</b></div>
+  </section>
+
+  <section class="bar">
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <div class="filters">
+      <select id="range" aria-label="الفترة"><option value="today">النهارده</option><option value="week">آخر 7 أيام</option><option value="all" selected>كل الطلبات</option></select>
+      <input id="q" type="search" placeholder="رقم الطلب أو الاسم أو الموبايل" aria-label="بحث">
+    </div>
+  </section>
+
+  <main>
+    <table class="tbl" id="tbl">
+      <thead><tr><th>الطلب</th><th>الوقت</th><th>العميل</th><th>المنطقة</th><th>التوصيل</th><th>الدفع</th><th>الإجمالي</th><th>الحالة</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden><b>مفيش طلبات هنا</b><span>الطلبات الجديدة هتظهر هنا لوحدها أول ما توصل.</span></div>
+  </main>
+</div>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" tabindex="-1"></aside>
+<div class="toast" id="toast" role="status"></div>
+<script src="admin.js?v=88728"></script>
+</body>
+</html>

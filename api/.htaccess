@@ -1,0 +1,5 @@
+# ممنوع حد يفتح ملفات الإعدادات وقاعدة البيانات من المتصفح
+<FilesMatch "^(config\.php|config\.sample\.php|db\.php|.*\.sqlite)$">
+  Require all denied
+</FilesMatch>
+Options -Indexes

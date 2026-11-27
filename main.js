@@ -17,7 +17,7 @@ function bump(el){if(!el)return;el.style.animation='none';void el.offsetWidth;el
 /* الليمونة بتطير من صورة المنتج للسلة، وبعدين المنتج يتضاف */
 window.mowgaAdd=function(item,imgEl){
   const target=visibleCart();
-  const done=()=>{const f=cart.find(x=>x.id===item.id&&x.w===item.w);if(f)f.qty++;else cart.push({...item,qty:1});save(cart);paint();bump(target)};
+  const done=()=>{const f=cart.find(x=>x.id===item.id&&x.wi===item.wi);if(f)f.qty++;else cart.push({...item,qty:1});save(cart);paint();bump(target)};
   if(reduce||!target||!imgEl||!tpl){done();return}
   const a=imgEl.getBoundingClientRect(),c=target.getBoundingClientRect();
   const fx=document.createElement('div');fx.className='fx';
@@ -48,9 +48,8 @@ acc.forEach(it=>{
 const plates=document.querySelector('.plates');
 function count(){document.querySelectorAll('.num').forEach((el,i)=>{const T=+el.dataset.target,d=reduce?0:900+i*180,dur=reduce?1:1200;setTimeout(()=>{const t0=performance.now();const step=now=>{const k=Math.min(1,(now-t0)/dur);el.textContent=fmt(T*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)},d)})}
 if(plates){const io=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){io.disconnect();plates.classList.add('go');count()}},{threshold:.2});io.observe(plates)}
-const NAMES=['فيليه سالمون نرويجي','ستيك سالمون','شرايح سالمون سوشي','جمبري طازة'];
 document.querySelectorAll('[data-add]').forEach(btn=>btn.addEventListener('click',()=>{
-  const i=+btn.dataset.add, pl=btn.closest('[data-plate]');
-  mowgaAdd({id:'home-'+i,name:NAMES[i],w:'',price:+pl.querySelector('.num').dataset.target,img:pl.querySelector('img').getAttribute('src')},pl.querySelector('img'));
+  const pl=btn.closest('[data-plate]');
+  mowgaAdd({id:pl.dataset.pid,wi:+pl.dataset.wi,name:pl.querySelector('strong').textContent,price:+pl.querySelector('.num').dataset.target,img:pl.querySelector('img').getAttribute('src')},pl.querySelector('img'));
 }));
 })();
