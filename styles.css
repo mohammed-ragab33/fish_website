@@ -52,12 +52,12 @@ html,body{overflow-x:clip}
   body.menu-open .menu-btn span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
   body.menu-open .menu-btn span:nth-child(2){opacity:0}
   body.menu-open .menu-btn span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-  .main-nav{position:fixed!important;inset:0;z-index:40;background:rgba(8,13,17,.97);flex-direction:column!important;justify-content:center;align-items:center;gap:28px!important;font-size:24px!important;font-family:'Noto Naskh Arabic',serif;flex-wrap:nowrap!important;transform:translateX(100%);visibility:hidden;transition:transform .5s cubic-bezier(.16,1,.3,1),visibility .5s}
+  .main-nav{position:fixed!important;inset:0;z-index:40;background:rgba(8,13,17,.97);flex-direction:column!important;justify-content:center;align-items:center;gap:28px!important;font-size:24px!important;font-family:'Noto Naskh Arabic',serif;flex-wrap:nowrap!important;display:none!important}
   body.menu-open{overflow:hidden}
-  body.menu-open .main-nav{transform:none;visibility:visible}
-  .main-nav a{opacity:0;transform:translateY(14px);transition:opacity .4s,transform .4s}
-  body.menu-open .main-nav a{opacity:1;transform:none}
-  body.menu-open .main-nav a:nth-child(2){transition-delay:.05s}body.menu-open .main-nav a:nth-child(3){transition-delay:.1s}body.menu-open .main-nav a:nth-child(4){transition-delay:.15s}body.menu-open .main-nav a:nth-child(5){transition-delay:.2s}body.menu-open .main-nav a:nth-child(6){transition-delay:.25s}
+  body.menu-open .main-nav{display:flex!important;animation:navin .45s cubic-bezier(.16,1,.3,1) both}
+  @keyframes navin{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+  body.menu-open .main-nav a{animation:navin .5s cubic-bezier(.16,1,.3,1) both}
+  body.menu-open .main-nav a:nth-child(2){animation-delay:.05s}body.menu-open .main-nav a:nth-child(3){animation-delay:.1s}body.menu-open .main-nav a:nth-child(4){animation-delay:.15s}body.menu-open .main-nav a:nth-child(5){animation-delay:.2s}body.menu-open .main-nav a:nth-child(6){animation-delay:.25s}
 
   .hero{min-height:0!important;display:flex;flex-direction:column;overflow:visible!important}
   .hero .site-header{order:1}
@@ -152,3 +152,43 @@ html,body{overflow-x:clip}
   .acc-info small{font-size:13px}
   .acc-info em{padding:9px 16px;font-size:14px}
 }
+
+/* ---------- أول الصفحة بحجم الشاشة (كمبيوتر) ---------- */
+@media (min-width:761px){
+  .hero{min-height:100vh!important;display:flex;flex-direction:column}
+  .hero .float{width:100%!important}
+  .hero-shade{background:linear-gradient(270deg,rgba(11,17,22,.96) 0,rgba(11,17,22,.82) 32%,rgba(11,17,22,.25) 62%,rgba(11,17,22,.1) 100%)!important}
+  .hero-shade::after{content:"";position:absolute;inset:auto 0 0 0;height:180px;background:linear-gradient(0deg,rgba(11,17,22,.7),rgba(11,17,22,0))}
+  .hero-body{flex:1;align-items:center;width:100%}
+  .hero .site-header{width:100%}
+}
+
+/* ---------- الأقسام اللي تحت أول الصفحة: لون فاتح ---------- */
+.lt{--lt-bg:#f6f1e7;--lt-card:#fffaf2;--lt-line:#e4d8c4;--lt-ink:#1b2226;--lt-mute:#5c6266;--lt-gold:#8a6a2f;background:var(--lt-bg)!important;color:var(--lt-ink)}
+section.lt{border-color:var(--lt-line)!important}
+.stats.lt,.why.lt{background:#efe7d8!important}
+.lt [style*="color:#f1ece3"]{color:var(--lt-ink)!important}
+.lt [style*="color:#a8b0b5"],.lt [style*="color:#c3cace"],.lt [style*="color:#8a949a"],.lt [style*="color:#c8cfd3"]{color:var(--lt-mute)!important}
+.lt [style*="color:#6f7b82"]{color:#6b6f72!important}
+.lt [style*="color:#c9a45c"]{color:var(--lt-gold)!important}
+.lt [style*="border:1px solid #1d2830"],.lt [style*="border:1px solid #3a3424"],.lt [style*="border-inline-start:1px solid #1d2830"]{border-color:var(--lt-line)!important}
+.lt [style*="background:#0f171d"],.lt [style*="background:#0d151a"]{background:var(--lt-card)!important}
+.lt .btn-gold[style*="color:#16110a"],.lt [style*="background:#c9a45c"][style*="color:#16110a"]{color:#16110a!important}
+.lt .btn-ghost{color:var(--lt-ink)!important;border-color:#cdbb9c!important}
+.lt .btn-ghost:hover{color:#16110a!important}
+.lt .stats .rv,.stats.lt .rv{border-color:var(--lt-line)!important}
+.lt svg[stroke="#c9a45c"]{stroke:var(--lt-gold)}
+/* الأطباق على الفاتح */
+.lt .pl img{box-shadow:0 26px 40px -20px rgba(70,45,10,.45)!important}
+.lt .pl .shadow{background:rgba(70,45,10,.28)!important}
+.lt .pl .ring{border-color:#b8975a!important}
+.lt .pl > div:first-child > span:nth-child(2){background:radial-gradient(circle,rgba(201,164,92,.28),rgba(201,164,92,0) 65%)!important}
+.lt .old::after{background:var(--lt-gold)}
+.lt .add{color:var(--lt-gold)!important;border-color:var(--lt-gold)!important}
+/* الشرائح بتفضل غامقة لأنها صور */
+.lt .acc-item{border-color:var(--lt-line)}
+.lt .acc-item.on{border-color:var(--lt-gold)}
+/* الفاصل بين الفاتح والفوتر */
+.site-footer{border-top:0!important}
+/* الأقسام اللي عرضها محدود: الخلفية الفاتحة تكمّل لحد حرف الشاشة */
+.bs.lt,.cats.lt,.bundle.lt{box-shadow:0 0 0 100vmax var(--lt-bg);clip-path:inset(0 -100vmax)}
