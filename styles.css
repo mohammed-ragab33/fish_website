@@ -44,7 +44,8 @@ html,body{overflow-x:clip}
   .site-header{padding:14px 18px!important;gap:12px!important;flex-wrap:nowrap!important;justify-content:space-between;position:sticky!important;top:0;z-index:30;background:#0b1116;width:100%;max-width:none!important;margin:0!important}
   .site-header{animation:fo .8s ease both!important}
   @keyframes fo{from{opacity:0}to{opacity:1}}
-  .site-header>a:first-child{font-size:24px!important}
+  .site-header>a:first-child{font-size:22px!important}
+  .site-header>a:first-child span{width:32px!important;height:32px!important;font-size:14px!important}
   .hdr-cta,.site-header .cartlink{display:none!important}
   .menu-btn{display:grid;gap:5px;width:44px;height:44px;place-content:center;background:transparent;border:1px solid #3a3424;cursor:pointer;z-index:45;position:relative}
   .menu-btn span{display:block;width:20px;height:1.5px;background:#c9a45c;transition:transform .35s,opacity .25s}
@@ -60,33 +61,38 @@ html,body{overflow-x:clip}
 
   .hero{min-height:0!important;display:flex;flex-direction:column;overflow:visible!important}
   .hero .site-header{order:1}
-  .hero .float{order:2;position:relative!important;width:100%!important;height:46vh;min-height:300px;inset:auto!important}
+  .hero .float{order:2;position:relative!important;width:100%!important;height:34vh;min-height:220px;max-height:320px;inset:auto!important}
   .hero .float::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0b1116 2%,rgba(11,17,22,0) 55%)}
   .hero-shade{display:none}
-  .hero-body{order:3;padding:0 20px 44px!important;margin-top:-70px!important;z-index:2}
-  .hero h1{font-size:44px!important;line-height:1.2!important}
-  .hero p{font-size:16px!important}
+  .hero-body{order:3;padding:0 18px 32px!important;margin-top:-36px!important;z-index:2}
+  .hin{gap:14px!important;max-width:100%!important}
+  .hin>span:first-child{font-size:12px!important}
+  .hin>span:first-child i{width:28px!important}
+  .hero h1{font-size:clamp(30px,9vw,36px)!important;line-height:1.25!important}
+  .hero p{font-size:15px!important;line-height:1.7!important}
   .hin>div:last-child{gap:10px!important}
-  .hin>div:last-child a{flex:1 1 100%;justify-content:center}
+  .hin>div:last-child{flex-wrap:nowrap!important}
+  .hin>div:last-child a{flex:1 1 0;justify-content:center;height:48px!important;padding:0 10px!important;font-size:15px!important;white-space:nowrap}
 
   .stats>div{display:grid!important;grid-template-columns:1fr 1fr}
   .stats .rv{padding:16px!important;border:0!important;border-bottom:1px solid #1d2830!important;gap:10px!important;flex-direction:column;align-items:flex-start!important}
-  .stats .rv strong{font-size:24px!important}
+  .stats .rv strong{font-size:20px!important}
   .stats .rv span{font-size:13px!important}
 
-  section h2{font-size:32px!important}
-  .bs{padding:56px 18px 36px!important}
+  section h2{font-size:26px!important;line-height:1.3!important}
+  .bs{padding:44px 16px 32px!important}
+  .bs>.rv a{display:none!important}
   .bs>.rv{margin-bottom:36px!important}
   .plates{display:grid!important;grid-template-columns:1fr 1fr;gap:28px 10px!important;padding:0!important}
   .pl{width:auto!important;margin-top:0!important;gap:8px!important}
   .pl:nth-child(even){margin-top:44px!important}
-  .pl>div:first-child{width:148px!important;height:148px!important}
+  .pl>div:first-child{width:min(132px,36vw)!important;height:min(132px,36vw)!important}
   .pl .drop>span{width:44px!important;height:44px!important;font-size:12px!important;right:0!important}
   .pl .ring{inset:-8px!important}
-  .pl strong.txt{font-size:18px!important;margin-top:4px!important}
+  .pl strong.txt{font-size:16px!important;margin-top:4px!important;line-height:1.4}
   .pl span.txt{font-size:12px!important;text-align:center}
   .pl div.txt{flex-direction:column;align-items:center!important;gap:0!important}
-  .pl div.txt strong{font-size:18px!important;min-width:0!important;text-align:center!important}
+  .pl div.txt strong{font-size:16px!important;min-width:0!important;text-align:center!important}
   .pl .add{font-size:14px!important;padding:10px 4px 3px!important}
   @keyframes drop{0%{transform:translateY(-200px) rotate(-120deg) scale(.9);opacity:0}55%{opacity:1}72%{transform:translateY(10px) rotate(6deg)}86%{transform:translateY(-4px) rotate(-2deg)}100%{transform:none;opacity:1}}
 
@@ -94,7 +100,8 @@ html,body{overflow-x:clip}
   .cats h2{padding:0 18px;margin-bottom:20px!important}
   .cat-grid{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 18px 10px;gap:12px!important;scrollbar-width:none}
   .cat-grid::-webkit-scrollbar{display:none}
-  .cat-grid>a{flex:0 0 64%;scroll-snap-align:start;height:220px!important;animation:none!important}
+  .cat-grid>a{flex:0 0 58%;scroll-snap-align:start;height:190px!important;animation:none!important;padding:14px!important}
+  .cat-grid strong{font-size:18px!important}
 
   .why>div{padding:48px 18px!important;grid-template-columns:1fr 1fr!important;gap:28px 16px!important}
   .why strong{font-size:18px!important}
@@ -102,7 +109,8 @@ html,body{overflow-x:clip}
 
   .bundle{padding:48px 18px!important;gap:24px!important}
   .bundle>div{flex-basis:100%!important}
-  .bundle>div:first-child{height:240px!important}
+  .bundle>div:first-child{height:200px!important}
+  .bundle p{font-size:15px!important}
   .bundle a.btn-gold{align-self:stretch!important;justify-content:center}
 
   .site-footer>div:first-child{padding:40px 18px 24px!important;gap:28px!important}
